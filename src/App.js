@@ -4,6 +4,7 @@ import generate, {data} from './OpFunc.js';
 import {useState} from 'react';
 
 function App() {
+  const [buttonText, setButtonText] = useState('Start')
   const numOne = data.numOne
   const [numOneText, setOneText] = useState(numOne)
   const numTwo = data.numTwo
@@ -14,6 +15,7 @@ function App() {
 
   function buttonClick() {
     generate()
+    setButtonText("Next")
     setOneText(data.numOne)
     setTwoText(data.numTwo)
     setAnswerText(data.answer)
@@ -28,7 +30,7 @@ function App() {
           <li>{answerText}</li>
           <li>{numTwoText}</li>
         </ul>
-        <button onClick={buttonClick}>Next</button>
+        <button onClick={buttonClick}>{buttonText}</button>
       </header>
     </div>
   );

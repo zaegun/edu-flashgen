@@ -22,13 +22,13 @@
 }
 
 #op-data li {
-  width: 16rem;
-  font-size: 16rem;
+  width: 16vw;
+  font-size: 16vw;
 }
 
 button {
-  font-size: 3rem;
-  padding: 1.5rem 2.5rem;
+  font-size: 3vw;
+  padding: 1.5vw 2.5vw;
   text-transform: uppercase;
   color: white;
   background-color: #04AA6D;
