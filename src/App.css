@@ -30,17 +30,34 @@ button {
   font-size: 3vw;
   padding: 1.5vw 2.5vw;
   text-transform: uppercase;
-  color: white;
-  background-color: #04AA6D;
   border: none;
   transition-duration: 0.1s;
 }
 
-button:hover {
+
+#check--button {
+  color: white;
+  background-color: #d82620;
+}
+
+#check--button:hover {
+  background-color: #c5201b;
+}
+
+#check--button:active {
+  background-color: #e42b25;
+}
+
+#next--button {
+  color: white;
+  background-color: #04AA6D;
+}
+
+#next--button:hover {
   background-color: #028857;
 }
 
-button:active {
+#next--button:active{
   background-color: #0bbd7c;
 }
 
@@ -66,4 +83,20 @@ button:active {
   to {
     transform: rotate(360deg);
   }
+}
+
+.show {
+  display: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.answer--show {
+  visibility: inherit;
+}
+
+.answer--hide {
+  visibility: hidden;
 }

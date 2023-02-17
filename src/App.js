@@ -1,9 +1,10 @@
-import logo from './logo.svg';
+
 import './App.css';
 import generate, {data} from './OpFunc.js';
 import {useState} from 'react';
 
 function App() {
+  const [visible, setVisible] = useState(true)
   const [buttonText, setButtonText] = useState('Start')
   const numOne = data.numOne
   const [numOneText, setOneText] = useState(numOne)
@@ -12,9 +13,13 @@ function App() {
   const answer = data.answer
   const [answerText, setAnswerText] = useState(answer)
 
+  function setTransparent() {
+    setVisible(!visible)
+  }
 
   function buttonClick() {
     generate()
+    setTransparent(0)
     setButtonText("Next")
     setOneText(data.numOne)
     setTwoText(data.numTwo)
@@ -27,10 +32,11 @@ function App() {
         {generate()}
         <ul id="op-data">
           <li>{numOneText}</li>
-          <li>{answerText}</li>
+          <li className={visible ? 'answer--show' : 'answer--hide'}>{answerText}</li>
           <li>{numTwoText}</li>
         </ul>
-        <button onClick={buttonClick}>{buttonText}</button>
+        <button onClick={(event) => setTransparent()} className={!visible ? 'show' : 'hide'} id="check--button">Check</button>
+        <button onClick={buttonClick} className={visible ? 'show' : 'hide'} id="next--button">{buttonText}</button>
       </header>
     </div>
   );
