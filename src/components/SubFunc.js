@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 
 let randomNum = () => Math.floor(Math.random() * 10)
+let gradeLevel = 1
 
 const subData = {
     firstNum: 0,
@@ -14,6 +15,15 @@ const subData = {
 function generate() {
     subData.firstNum = randomNum()
     subData.secondNum = randomNum()
+    evaluate()
+  }
+  
+function evaluate() {
+  if (gradeLevel < 2 && subData.firstNum < subData.secondNum) {
+    let tempData = subData.firstNum
+    subData.firstNum = subData.secondNum
+    subData.secondNum = tempData
+  }
 }
 
 function SubFunc() {

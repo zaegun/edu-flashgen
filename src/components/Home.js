@@ -9,6 +9,7 @@ function Home() {
     <nav>
       <Link to="op"><img src={op} alt="" /></Link>
       <Link to="add"><img src={add} alt="" /></Link>
+      <Link to="sub"><img src={sub} alt="" /></Link>
     </nav>
   );
 }
