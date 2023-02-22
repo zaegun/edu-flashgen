@@ -116,3 +116,18 @@ nav > a > img {
   align-items: end;
   margin-bottom: 3vw;
 }
+
+.grade--list{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.grade--list > span {
+  margin: 0 1vw;
+}
+
+.grade--list > select {
+  padding: 0 0.5vw;
+}

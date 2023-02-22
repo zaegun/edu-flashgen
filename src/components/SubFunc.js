@@ -1,7 +1,8 @@
 import React from 'react'
 import {useState} from 'react'
 
-let randomNum = () => Math.floor(Math.random() * 10)
+const gradeDigit = {1:10, 2:100, 3:1000}
+let randomNum = () => Math.floor(Math.random() * gradeDigit[gradeLevel])
 let gradeLevel = 1
 
 const subData = {
@@ -48,10 +49,23 @@ function SubFunc() {
       setTwoText(subData.numTwo)
       setAnswerText(subData.answer)
     }
+
+    function handleChange(e) {
+      gradeLevel = e.target.value
+      buttonClick()
+    }
   
     return (
       <div className="App">
         <header className="App-header">
+            <div className="grade--list">
+              <span>Level:</span>
+              <select onChange={handleChange}>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
             {generate()}
             <div className="arith--box">
                 <span>{numOneText}</span>
